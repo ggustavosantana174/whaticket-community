@@ -8,6 +8,10 @@ RUN npm install
 COPY .env* ./
 COPY src/ ./src/
 COPY public/ ./public/
+
+# 👇 Correção para Node 17+ com Webpack/react-scripts
+ENV NODE_OPTIONS=--openssl-legacy-provider
+
 RUN npm run build
 
 FROM nginx:alpine
