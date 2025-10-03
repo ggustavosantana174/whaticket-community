@@ -1,4 +1,7 @@
-FROM node:14-alpine as build-deps
+# ==========================
+# FRONTEND
+# ==========================
+FROM node:18-alpine as build-deps
 WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install
